@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D9640872990AB31005A9DF9 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9640862990AB31005A9DF9 /* UserPreferences.swift */; };
+		8D9640892990C4C4005A9DF9 /* DetailConstnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9640882990C4C4005A9DF9 /* DetailConstnts.swift */; };
 		8DA263EC298CA96D00352A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA263EB298CA96D00352A6D /* AppDelegate.swift */; };
 		8DA263EE298CA96D00352A6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA263ED298CA96D00352A6D /* SceneDelegate.swift */; };
 		8DA263F5298CA97000352A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA263F4298CA97000352A6D /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D9640862990AB31005A9DF9 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		8D9640882990C4C4005A9DF9 /* DetailConstnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConstnts.swift; sourceTree = "<group>"; };
 		8DA263E8298CA96D00352A6D /* CallAPIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallAPIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA263EB298CA96D00352A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DA263ED298CA96D00352A6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				8DA26409298CB1B600352A6D /* AQI.swift */,
 				8DA2640B298CB45800352A6D /* NetworkManager.swift */,
 				8DA2640D298CBA2200352A6D /* NetworkConstants.swift */,
+				8D9640862990AB31005A9DF9 /* UserPreferences.swift */,
+				8D9640882990C4C4005A9DF9 /* DetailConstnts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,10 +211,12 @@
 				8DA2640C298CB45800352A6D /* NetworkManager.swift in Sources */,
 				8DA26418298CE48D00352A6D /* UIViewController+Extensions.swift in Sources */,
 				8DA26416298CE34700352A6D /* String+Extensions.swift in Sources */,
+				8D9640892990C4C4005A9DF9 /* DetailConstnts.swift in Sources */,
 				8DA26412298CDEAE00352A6D /* AQITableViewCell.swift in Sources */,
 				8DA2641F298CF5F700352A6D /* DetailViewController.swift in Sources */,
 				8DA263EE298CA96D00352A6D /* SceneDelegate.swift in Sources */,
 				8DA2640A298CB1B600352A6D /* AQI.swift in Sources */,
+				8D9640872990AB31005A9DF9 /* UserPreferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,6 @@ struct NetworkConstants {
     enum APIPath: String{
         case aqi = "data.epa.gov.tw/api/v2/aqx_p_432"
     }
-    
     enum APIError: Error{
         case invalidUrl
         

@@ -18,7 +18,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTapper()
         setupUI()
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print(UserPreferences.shared.lastSelectCounty)
+        print(UserPreferences.shared.lasetSelcetStatus)
+        print(UserPreferences.shared.lasetSelectAQI)
     }
     private func setupUI(){
         setupButton()
@@ -29,8 +33,7 @@ class MainViewController: UIViewController {
     private func setupTextField(){
         numberTextField.placeholder = "請輸入查詢筆數"
         numberTextField.keyboardType = .numberPad
-        
-        
+        numberTextField.text = UserPreferences.shared.lastSearchNum
     }
     private func setupButton(){
         searchButton.setTitle("開始查詢", for: .normal)
@@ -47,6 +50,7 @@ class MainViewController: UIViewController {
         guard let text = numberTextField.text, !text.isEmpty else {
             return
         }
+        UserPreferences.shared.lastSearchNum = text
         NetWorkManager.shared.requestData(offset: 0, limit: text.toInt()){ (respones: AQIResponseResult) in
             switch respones{
             case .success(let results):
@@ -81,6 +85,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         newArray = []
+        UserPreferences.shared.lastSelectCounty = aqiArray[indexPath.row].county
+        UserPreferences.shared.lasetSelcetStatus = aqiArray[indexPath.row].status
+        UserPreferences.shared.lasetSelectAQI = aqiArray[indexPath.row].aqi
         tableView.deselectRow(at: indexPath, animated: true)
         let nextVC = DetailViewController()
         newArray.append(aqiArray[indexPath.row].county)
