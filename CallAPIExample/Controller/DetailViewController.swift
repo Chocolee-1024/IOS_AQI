@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var measureLabel: UILabel!
     @IBOutlet weak var informationView: UIStackView!
     @IBOutlet var aqiView: UIView!
-    var aqiArray: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,7 +28,7 @@ class DetailViewController: UIViewController {
     private func setupUI(){
         setupLabel()
         setupView()
-        setupAQI(aqiValue: aqiArray[2].toInt())
+        setupAQI()
     }
     private func setupLabel(){
 
@@ -38,8 +37,8 @@ class DetailViewController: UIViewController {
         status.text = "狀態："
         healthy.text = "對健康的影響"
         measure.text = "建議採取的措施"
-        countryLabel.text = aqiArray[0]
-        statusLabel.text = aqiArray[1]
+        countryLabel.text = UserPreferences.shared.lastSelectCounty
+        statusLabel.text = UserPreferences.shared.lasetSelcetStatus
         
         countryLabel.font = .systemFont(ofSize: 20)
         statusLabel.font = .systemFont(ofSize: 20)
@@ -67,13 +66,14 @@ class DetailViewController: UIViewController {
         measure.backgroundColor = .init(red: 156/255, green: 151/255, blue: 176/255, alpha: 1)
        
     }
-    private func setupAQI(aqiValue: Int){
+    private func setupAQI(){
         aqi.text = "AQI數值："
         aqi.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
-        aqiLabel.text = aqiArray[2]
+        aqiLabel.text = UserPreferences.shared.lasetSelectAQI
         aqiLabel.font = .systemFont(ofSize: 20)
         aqiLabel.sizeToFit()
         
+        let aqiValue: Int = UserPreferences.shared.lasetSelectAQI.toInt()
 
         switch aqiValue {
         case 0 ... 50:

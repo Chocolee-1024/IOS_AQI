@@ -59,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D96408A2990E0DD005A9DF9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				8DA26409298CB1B600352A6D /* AQI.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		8DA263DF298CA96D00352A6D = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +113,7 @@
 		8DA26408298CB19B00352A6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8DA26409298CB1B600352A6D /* AQI.swift */,
+				8D96408A2990E0DD005A9DF9 /* Response */,
 				8DA2640B298CB45800352A6D /* NetworkManager.swift */,
 				8DA2640D298CBA2200352A6D /* NetworkConstants.swift */,
 				8D9640862990AB31005A9DF9 /* UserPreferences.swift */,

@@ -10,6 +10,7 @@ import Foundation
 class NetWorkManager{
     static let shared = NetWorkManager()
     
+    
     func requestData<D: Decodable>(offset: Int, limit: Int, finish: @escaping(Result<D, NetworkConstants.APIError>) -> Void){
         let path = NetworkConstants.baseUrl + NetworkConstants.APIPath.aqi.rawValue
         let apiKey = NetworkConstants.apiKey
@@ -35,7 +36,6 @@ class NetWorkManager{
                 finish(.failure(.jsonDecodeFailed))
                 return
             }
-            //將資料用閉包傳回
             finish(.success(results))
         }.resume()
     }

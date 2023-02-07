@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
         setupButton()
         setupTableView()
         setupTextField()
-        
     }
     private func setupTextField(){
         numberTextField.placeholder = "請輸入查詢筆數"
@@ -54,7 +53,6 @@ class MainViewController: UIViewController {
         NetWorkManager.shared.requestData(offset: 0, limit: text.toInt()){ (respones: AQIResponseResult) in
             switch respones{
             case .success(let results):
-                print(results.records)
                 self.aqiArray = results.records
                 DispatchQueue.main.async {
                     self.aqiTableView.reloadData()
@@ -90,10 +88,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         UserPreferences.shared.lasetSelectAQI = aqiArray[indexPath.row].aqi
         tableView.deselectRow(at: indexPath, animated: true)
         let nextVC = DetailViewController()
-        newArray.append(aqiArray[indexPath.row].county)
-        newArray.append(aqiArray[indexPath.row].status)
-        newArray.append(aqiArray[indexPath.row].aqi)
-        nextVC.aqiArray = newArray
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
